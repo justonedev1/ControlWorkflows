@@ -93,6 +93,7 @@ defaults:
     widget: editBox
     panel: Logging
     index: 4
+    rows: 10
   ###############################
   # Other variables
   ###############################
