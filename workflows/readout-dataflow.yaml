@@ -1612,6 +1612,14 @@ roles:
           trigger: before_CONFIGURE
           timeout: "{{ drop_caches_timeout }}"
           critical: false # TODO: if this is set true, some basic task finished events aren't parsed correctly
+      - name: should_fail_deployment
+        enabled: true
+        vars:
+          shell_command: "test-command"
+          user: root
+        task:
+          load: "shell-command"
+          critical: false
       - name: fairmq-shmcleanup
         enabled: "{{fmq_initial_shm_cleanup_enabled == 'true'}}"
         vars:
