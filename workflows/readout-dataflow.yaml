@@ -1619,8 +1619,6 @@ roles:
           user: root
         task:
           load: "shell-command"
-          # trigger: before_CONFIGURE
-          # timeout: "{{ fmq_initial_shm_cleanup_timeout }}"
           critical: false
       - name: should_fail_deployment
         enabled: true
