@@ -9,7 +9,7 @@ defaults:
     o2-readout-exe
   # _plain_cmdline: "{{ o2_install_path }}/bin/o2-readout-exe"
   # _plain_cmdline: "sudo /usr/bin/docker run --name readout --replace --user $(id -u flp):$(id -u flp) --network=host --ipc=host -e O2_DETECTOR={{ detector }} -e O2_PARTITION={{ environment_id }} -e OCC_CONTROL_PORT=31000 -e O2_SYSTEM=FLP -e O2_ROLE=mtichak-ostack gitlab-registry.cern.ch/aliceo2group/dockerfiles/alma9-flp-node:2 /opt/o2/bin/o2-readout-exe"
-  _plain_cmdline: "sudo /usr/bin/docker run --name readout --replace --user $(id -u flp):$(id -u flp) -v /tmp:/tmp --network=host --ipc=host -e O2_DETECTOR={{ detector }} -e O2_PARTITION={{ environment_id }} -e OCC_CONTROL_PORT=31000 -e O2_SYSTEM=FLP -e O2_ROLE=alio2-cr1-mvs01 gitlab-registry.cern.ch/aliceo2group/dockerfiles/alma9-flp-node:2 /opt/o2/bin/o2-readout-exe"
+  _plain_cmdline: "sudo /usr/bin/docker run --name readout --replace --user $(id -u flp):$(id -u flp) -v /tmp:/tmp -v /etc/o2.d:/etc/o2.d --network=host --ipc=host -e O2_DETECTOR={{ detector }} -e O2_PARTITION={{ environment_id }} -e OCC_CONTROL_PORT=31000 -e O2_SYSTEM=FLP -e O2_ROLE=alio2-cr1-mvs01 gitlab-registry.cern.ch/aliceo2group/dockerfiles/alma9-flp-node:2 /opt/o2/bin/o2-readout-exe"
   # _plain_cmdline: "/usr/bin/docker run --network=host -e O2_DETECTOR={{ detector }} -e O2_PARTITION={{ environment_id }} -e OCC_CONTROL_PORT=31000 -e O2_SYSTEM=FLP -e O2_ROLE=mtichak-ostack gitlab-registry.cern.ch/aliceo2group/dockerfiles/alma8-flp-node:latest echo \"hello world\""
 control:
   mode: direct
